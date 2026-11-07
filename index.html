@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allyons | Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">allyons</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="interests.html">Интересы</a></li>
+                <li><a href="recommendations.html">Рекомендации</a></li>
+                <li><a href="places.html">Места</a></li>
+                <li><a href="favorite.html">Фаворит</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Привет, я <span>Алёна</span></h1>
+            <p>Тут я буду делиться своими увлечениями, впечатлениями и рекомендациями.</p>
+        </section>
+
+        <!-- СЛАЙДЕР -->
+        <div class="slider-wrapper">
+            <div class="slides-container">
+                <img src="images/slide1.jpg" alt="Слайд 1" class="slide active">
+                <img src="images/slide2.jpg" alt="Слайд 2" class="slide">
+                <img src="images/slide3.jpg" alt="Слайд 3" class="slide">
+            </div>
+            
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Сетка карточек -->
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Спорт</h3>
+                <p>Движение — это жизнь. Люблю активный отдых и поддержание формы.</p>
+            </div>
+            <div class="card">
+                <h3>Книги</h3>
+                <p>Чтение помогает расширять кругозор и находить новые смыслы.</p>
+            </div>
+            <div class="card">
+                <h3>Рисование</h3>
+                <p>Творчество позволяет выразить эмоции и взглянуть на мир иначе.</p>
+            </div>
+            <div class="card">
+                <h3>Видеосъемка</h3>
+                <p>Ловлю моменты и превращаю их в маленькие истории.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 allyons. Сделано с душой.</p>
+    </footer>
+
+    <!-- СКРИПТ СЛАЙДЕРА -->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            // Убираем класс active у всех картинок
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Если дошли до конца - начинаем сначала
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            
+            // Показываем нужную картинку
+            slides[currentIndex].classList.add('active');
+        }
+
+        // Функция для стрелочек
+        function moveSlide(step) {
+            showSlide(currentIndex + step);
+        }
+    </script>
+</body>
+</html>

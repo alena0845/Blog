@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allyons | Фаворит</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">allyons</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="interests.html">Интересы</a></li>
+                <li><a href="recommendations.html">Рекомендации</a></li>
+                <li><a href="places.html">Места</a></li>
+                <li><a href="favorite.html" class="active">Фаворит</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Мой фаворит</h1>
+        
+        <section class="favorite-section">
+            <img src="images/favorite.jpg" alt="Друзья" class="favorite-img-large">
+            <h2>Мои друзья</h2>
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--text-light);">
+                У меня нет фаворитов в привычном понимании этого слова, но я очень сильно люблю своих друзей, которые остаются со мной рядом несмотря ни на что. Это самое ценное, что у меня есть.
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid var(--glass-border); margin: 4rem 0;">
+
+        <!-- Мини-игра -->
+        <section class="game-container">
+            <h2>Сыграем?</h2>
+            <p style="color: var(--text-light); margin-bottom: 1rem;">Камень, ножницы, бумага</p>
+            
+            <div class="game-choices">
+                <button class="game-btn" onclick="playGame('rock')">✊</button>
+                <button class="game-btn" onclick="playGame('scissors')">✌️</button>
+                <button class="game-btn" onclick="playGame('paper')">✋</button>
+            </div>
+
+            <div class="game-result" id="result">Сделай свой выбор!</div>
+            <div class="game-score" id="score">Счет: Вы 0 : 0 Компьютер</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 allyons. Сделано с душой.</p>
+    </footer>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
